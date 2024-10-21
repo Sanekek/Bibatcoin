@@ -37,6 +37,10 @@ body {
     }
     .review{
       margin-inline: 0 !important;
+      padding: 10px !important;
+    }
+    .review-prev, .review-next{
+      padding: 10px !important;
     }
     .review-image {
       margin-right: 20px;
@@ -251,6 +255,7 @@ body {
     width: 200px;
     height: 200px;
     border-radius: 100%;
+    max-width: 100%;
   }
   .review-container{
     display:flex;
@@ -266,6 +271,7 @@ body {
     border-radius: 20px;
     animation-name: fade-review;
     animation-duration: 1s;
+    max-width: 100%;
   }
   @keyframes fade-review {
     from {opacity: 0.3;}
@@ -308,10 +314,12 @@ body {
     display: block;
     text-align: left;
     font-size: 30px;
+    max-width: 100%;
   }
   .review-name {
     font-size: 30px;
     color: lightblue;
+    max-width: 100%;
   }
 
   .bottom-info{
