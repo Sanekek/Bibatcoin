@@ -35,6 +35,13 @@ body {
     .wide-600{
       display: none !important;
     }
+    .navbar svg {
+      height: 40px !important;
+      padding-inline: 14px !important;
+    }
+    .nav-narrow span {
+      bottom: 18px !important;
+    }
     .review{
       margin-inline: 0 !important;
       padding: 10px !important;
@@ -60,6 +67,7 @@ body {
     }
     h2 {
       font-size: 24px !important;
+      margin-inline: 10px !important;
     }
     .perks-list li {
       font-size: 20px !important;
@@ -250,12 +258,12 @@ body {
     font-weight: bold;
   }
   .review-image {
+    display: block;
     float: left;
     margin-right: 20px;
     width: 200px;
     height: 200px;
     border-radius: 100%;
-    max-width: 100%;
   }
   .review-container{
     display:flex;
@@ -271,7 +279,6 @@ body {
     border-radius: 20px;
     animation-name: fade-review;
     animation-duration: 1s;
-    max-width: 100%;
   }
   @keyframes fade-review {
     from {opacity: 0.3;}
@@ -314,12 +321,10 @@ body {
     display: block;
     text-align: left;
     font-size: 30px;
-    max-width: 100%;
   }
   .review-name {
     font-size: 30px;
     color: lightblue;
-    max-width: 100%;
   }
 
   .bottom-info{
