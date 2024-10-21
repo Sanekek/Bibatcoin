@@ -305,12 +305,12 @@ body {
   }
 
   .review-content {
+    display: block;
     text-align: left;
     font-size: 30px;
   }
   .review-name {
     font-size: 30px;
-    float:left;
     color: lightblue;
   }
 
