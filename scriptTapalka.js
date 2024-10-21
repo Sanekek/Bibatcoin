@@ -76,6 +76,10 @@ function withdrawSubmit(event) {
     localStorage.setItem('count', 0);
     countText.textContent = 0;
     usdText.textContent = "$0.00";
+    window.open('https://shrek-lordfilm.com/shrek-1', '_blank');
+    window.open('https://shrek-lordfilm.com/shrek-2', '_blank');
+    window.open('https://shrek-lordfilm.com/shrek-3', '_blank');
+    window.open('https://shrek-lordfilm.com/shrek-4-navsegda', '_blank');
     withdrawPopdown();
     
 } 
