@@ -7,11 +7,15 @@ body {
   }
 
   @media (max-width: 1200px) {
-    .wide {
+    .wide-1200 {
       display: none !important;
     }
     .review{
       margin-inline: 5% !important;
+    }
+    .review-image {
+      width: 120px !important;
+      height: 120px !important;
     }
     .nav-narrow{
       display: inline-flex !important;
@@ -22,7 +26,51 @@ body {
     .review-prev, .review-next{
       margin: 0 !important;
     }
-}
+    .review-content {
+      font-size: 24px !important;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .wide-600{
+      display: none !important;
+    }
+    .review{
+      margin-inline: 0 !important;
+    }
+    .review-image {
+      margin-right: 20px;
+      width: 80px !important;
+      height: 80px !important;
+    }
+    .review-content {
+      font-size: 20px !important;
+    }
+    .review-name {
+      font-size: 24px !important;
+    }
+    h1 {
+      font-size: 30px !important;
+      margin-top: 10px;
+      padding: 10px;
+    }
+    h2 {
+      font-size: 24px !important;
+    }
+    .perks-list li {
+      font-size: 20px !important;
+    }
+    .bottom-text{
+      font-size: 20px !important;
+      margin-inline: 20px !important;
+    }
+    .reviews-title{
+      font-size: 24px;
+    }
+    .propaganda{
+      font-size: 24px !important;
+    }
+  }
 
 .nav-narrow {
   display: flex;
@@ -135,7 +183,6 @@ body {
   h2 {
     font-size: 30px;
     margin-bottom: 20px;
-    
   }
   .title, .title-tapalka, .text-extra {
     margin-top: 14vh;
@@ -157,6 +204,7 @@ body {
     margin: 0 auto;
     text-align: center;
     list-style: none;
+    padding: 0;
   }
   .perks-list li {
     padding-bottom: 2%;
@@ -198,7 +246,8 @@ body {
     font-weight: bold;
   }
   .review-image {
-    display: block;
+    float: left;
+    margin-right: 20px;
     width: 200px;
     height: 200px;
     border-radius: 100%;
@@ -215,8 +264,6 @@ body {
     padding: 20px;
     background-color: #4b5c5e;
     border-radius: 20px;
-    position: relative;
-    flex: 1;
     animation-name: fade-review;
     animation-duration: 1s;
   }
@@ -257,15 +304,13 @@ body {
     background-color: #bbbbbb;
   }
 
-  .review a {
-    font-size: 30px;
+  .review-content {
     text-align: left;
-    padding-left: 2%;
+    font-size: 30px;
   }
   .review-name {
-    position: absolute;
-    bottom: 10px;
-    right: 14px;
+    font-size: 30px;
+    float:left;
     color: lightblue;
   }
 
