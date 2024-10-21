@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibatcoin</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="navbar">
+    <div class="home">
+      <a href="index.html" class="home-link">
+        <svg fill="#000000" width="40px" height="40px" viewBox="0 0 32 32" class="home-svg"
+          version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <path d="M30.854,16.548C30.523,17.43,29.703,18,28.764,18H28v11c0,0.552-0.448,1-1,1h-6v-7c0-2.757-2.243-5-5-5
+            s-5,2.243-5,5v7H5c-0.552,0-1-0.448-1-1V18H3.235c-0.939,0-1.759-0.569-2.09-1.451c-0.331-0.882-0.088-1.852,
+            0.62-2.47L13.444,3.019c1.434-1.357,3.679-1.357,5.112,0l11.707,11.086C30.941,14.696,31.185,15.666,30.854,16.548z"/></svg>
+          Головна
+        </a>
+    </div>
+    <div class="center-text">
+      <a class="wide">
+        <span class="coin">Bibatcoin (BBC)</span><span>|</span><span class="price" id="priceText">loading$</span><span>|</span><span class="growth" id="priceDifferenceText">23%</span>(7d)
+      </a>
+      <a class="nav-narrow" style="display: none;">
+        <span class="coin" id="coinTextNarrow">Bibatcoin (BBC)</span>
+        <span class="price" id="priceTextNarrow">loading$</span>
+        <span class="growth" id="priceDifferenceTextNarrow">growth<span></span></span>
+      </a>
+    </div>
+    <div class="account">
+      <a onclick="AccountCheck()" class="account-link">
+        <span id="accountName">Зареєструватися</span>
+        <svg viewBox="0 0 496 512" xmlns="http://www.w3.org/2000/svg" class="account-svg">
+            <path d="m248 8c-137 0-248 111-248 248s111 248 248 248 248-111 248-248-111-248-248-248zm0 96c48.6 0 88 39.4 88 88s-39.4
+                88-88 88-88-39.4-88-88 39.4-88 88-88zm0 344c-58.7 0-111.3-26.6-146.5-68.2 18.8-35.4 55.6-59.8 98.5-59.8 2.4 0 4.8.4 7.1
+                1.1 13 4.2 26.6 6.9 40.9 6.9s28-2.7 40.9-6.9c2.3-.7 4.7-1.1 7.1-1.1 42.9 0 79.7 24.4 98.5 59.8-35.2 41.6-87.8 68.2-146.5 68.2z"/></svg>
+        </a>
+    </div>
+  </div>
+
+  <div id="popupOverlay" 
+         class="overlay-container">
+        <div id="registrationBox"
+          class="registration-box">
+            <a onclick="PopdownRegistration()" class="popup-exit">
+              <svg viewBox="0 0 352 512" xmlns="http://www.w3.org/2000/svg">
+                <path d="m242.72 256 100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0l-100.07 
+                100.07-100.07-100.07c-12.28-12.28-32.19-12.28-44.48 0l-22.24 22.24c-12.28 12.28-12.28 32.19 0 44.48l100.07 100.07-100.07 
+                100.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0l100.07-100.07 100.07 100.07c12.28 12.28 
+                32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48z"/></svg>
+            </a>
+            <h2 style="color: darkcyan;">Реєстрація</h2>
+            <form class="form-container" onsubmit="saveFormData(event)">
+                <label class="form-label" for="name">ім'я:</label>
+                <input class="form-input"
+                       type="text" 
+                       placeholder="введіть ваше ім'я" 
+                       minlength="5"
+                       id="name" 
+                       name="name" required>
+
+                <label class="form-label" for="email">Email:</label>
+                <input class="form-input"
+                       type="email" 
+                       placeholder="введіть ваш Email"
+                       id="email" 
+                       name="email" required>
+
+                <label class="form-label" for="password">Пароль:</label>
+                <input class="form-input"
+                       type="password" 
+                       placeholder="введіть ваш пароль"
+                       minlength="5"
+                       id="password" 
+                       name="password" required>
+                <input class="form-input"
+                       type="password" 
+                       placeholder="підтвердіть пароль"
+                       minlength="5"
+                       id="passwordConfirm" 
+                       name="password" required>
+
+                <button class="btn-submit" type="submit">
+                  Продовжити
+                </button>
+            </form>
+        </div>
+        <div id="profileBox"
+              class="profile-box">
+              <a onclick="PopdownProfile()" class="popup-exit">
+                <svg viewBox="0 0 352 512" xmlns="http://www.w3.org/2000/svg">
+                  <path d="m242.72 256 100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0l-100.07 
+                  100.07-100.07-100.07c-12.28-12.28-32.19-12.28-44.48 0l-22.24 22.24c-12.28 12.28-12.28 32.19 0 44.48l100.07 100.07-100.07 
+                  100.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0l100.07-100.07 100.07 100.07c12.28 12.28 
+                  32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48z"/></svg>
+              </a>
+              <h2 style="color: darkcyan;">Ваш акаунт</h2>
+              <div class="profile-container">
+                <a class="profile-info">ім'я: <span class="profile-info-span" id="profileInfoName"> name </span> </a>
+                <a class="profile-info">Email:  <span class="profile-info-span" id="profileInfoEmail"> email </span> </a>
+              </div>
+              <button onclick="AccountExit()" class="profile-exit"
+                      id="profileExit">
+                    Вийти
+              </button>
+        </div>
+    </div>
+
+
+  <div class="title">
+    <h1><span class="text-coin">Bibatcoin</span> - iнновацiї, доступнi кожному.</h1>
+    <h2>Це не просто криптовалюта, це спосiб iснування у свiтi,<br/> сповненому технологiй.</h2>
+  </div>
+  <script src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module"></script> 
+    <dotlottie-player src="https://lottie.host/aaa33729-209f-4ea3-91b7-575840fcc2e7/eltNQwtI2V.json" speed="1" style="width: 100%; height: 500px;" loop autoplay></dotlottie-player>
+  <ul class="perks-list">
+    <li>• Заробляйте криптовалюту завдяки грамотно розрахованим натисканням на вомбата.</li>
+    <li>• Виводьте грошi собi на картку.</li>
+    <li>• Отримуйте бiльше за допомогою регулярних тренувань.</li>
+  </ul>
+  <a class="propaganda" id="propaganda" onclick="tapalkaCheck()">
+    Реєструйтсеся зараз
+  </a>
+  <div class="footer-root">
+    <footer>
+        <a class="reviews-title">Вiдгуки користувачiв:</a>
+        <div class="review-container">
+          <a class="review-prev" onclick="plusSlides(-1)">&#10094;</a>
+          <div class="review">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/American_Beaver.jpg" class="review-image">
+              <a>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla nemo dignissimos unde possimus facere et magnam, atque totam maiores deserunt distinctio odit corporis sapiente voluptatum?<br/> <br/> </a>
+              <a class="review-name">- Олександр</a>
+          </div>
+          <div class="review">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnRvEteHt3B_rRfWJTaWAAGnu5F3MOLILcdg&s" class="review-image">
+            <a>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure ipsa autem molestias quos iste quibusdam voluptates? Iusto odit earum, tempora consequatur ducimus, rerum nihil, animi exercitationem quaerat debitis eos cum.<br/> <br/> </a>
+            <a class="review-name">- Антон</a>
+          </div>
+          <div class="review">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMbFdW4VrrzUS5EeUG5YV1xRoyv8Gjy0d-Qw&s" class="review-image">
+            <a>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad libero fugiat esse. Iste ea excepturi praesentium, reprehenderit ipsa omnis vero, corrupti minima consectetur dolorum placeat velit. Quis reprehenderit ad temporibus.<br/> <br/> </a>
+            <a class="review-name">- Да</a>
+          </div>
+          <a class="review-next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <div style="text-align:center">
+          <span class="dot" onclick="currentSlide(1)"></span>
+          <span class="dot" onclick="currentSlide(2)"></span>
+          <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+      
+
+        <footer class="bottom-info">
+          <a class="bottom-text" href="faq.html">
+            FAQ
+          </a>
+          <a class="bottom-text" href="about.html">
+            Про нас
+          </a>
+          <a class="bottom-text" href="contacts.html">
+            Контакти
+          </a>
+        </footer>
+    </footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
