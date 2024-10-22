@@ -37,9 +37,7 @@ body {
     .wide-1200 {
       display: none !important;
     }
-    .review{
-      margin-inline: 5% !important;
-    }
+    
     .review-image {
       width: 120px !important;
       height: 120px !important;
@@ -293,6 +291,7 @@ body {
   }
   .review{
     display: none;
+    width: 1000px;
     margin-top: 3%;
     margin-bottom: 20px;
     padding: 20px;
@@ -335,8 +334,8 @@ body {
     display: flex;
     float: left;
     margin-right: 20px;
-    width: 200px;
-    height: 200px;
+    width: 140px;
+    height: 140px;
     border-radius: 100%;
   }
   .review-content {
