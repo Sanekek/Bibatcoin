@@ -273,7 +273,6 @@ body {
     width: 100%;
     justify-content: space-between;
     flex-direction: column;
-    padding-top: 50px;
     margin: 0 auto;
     background-color: #404d4f;
     color: #fff;
@@ -283,6 +282,8 @@ body {
   }
   .reviews-title{
     font-weight: bold;
+    display: block;
+    margin-top: 50px;
   }
   .review-container{
     display:flex;
@@ -350,8 +351,8 @@ body {
 
   .bottom-info{
     display: inline-flex;
-    padding-top: 30px;
-    padding-bottom: 30px;
+    margin-top: 60px;
+    margin-bottom: 30px;
   }
   .bottom-text{
     font-size: 26px;
